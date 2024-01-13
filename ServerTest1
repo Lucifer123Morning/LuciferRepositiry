@@ -1,0 +1,19 @@
+const http = require('http')
+
+let requestCount = 0
+
+const server = http.createServer( (request, response) => {
+    switch (request.url) {
+        case '/students':
+            response.write('Students ')
+            break;
+        case '/courses':
+            response.write('Front + Back ')
+            break;
+
+    }
+    requestCount++
+    response.write('IT-KAMASUTRA: ' + requestCount)
+    response.end()
+})
+server.listen(3003)
