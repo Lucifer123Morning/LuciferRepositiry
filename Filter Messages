@@ -1,0 +1,20 @@
+def filter_messages(messages):
+    new_list = []
+    bad_list = []
+    
+    for message in messages:
+        words = message.split()
+        good_list = []
+        counter = 0
+        
+        for word in words:
+            if word.lower() == "dang":
+                counter += 1
+            else:
+                good_list.append(word)
+                
+        sentence = " ".join(good_list)
+        new_list.append(sentence)
+        bad_list.append(counter)
+        
+    return new_list, bad_list
